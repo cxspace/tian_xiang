@@ -78,6 +78,7 @@ public class JdbcUtils {
 	 */
 
         public static void release() {
+            //
             if (rs != null) {
                 try {
                     rs.close();
