@@ -4,7 +4,7 @@ package entity;
  * Created by hjc on 16-7-1.
  */
 public class CommodityClass {
-    //商品类别对象
+    //商品类别类
 
     private int cc_id;
     //商品类别id
