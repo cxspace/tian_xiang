@@ -1,4 +1,8 @@
 # Created by .ignore support plugin (hsz.mobi)
+<<<<<<< HEAD
 将删除 .gitignore
 /.idea/workspace.xml
 
+=======
+/.idea/workspace.xml
+>>>>>>> origin/master
