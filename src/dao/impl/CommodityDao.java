@@ -1,5 +1,6 @@
-package dao;
+package dao.impl;
 
+import dao.ICommodityDao;
 import entity.Commodity;
 import utils.JdbcUtils;
 
@@ -48,11 +49,11 @@ public class CommodityDao implements ICommodityDao {
     public boolean update(Commodity commodity) {
         //更改某个id的商品
         String sql = "UPDATE commodity SET ";
-        sql+="c_name = '"+commodity.getC_name()+"' ";
-        sql+="c_number = '"+commodity.getC_number()+"' ";
-        sql+="c_picture = '"+commodity.getC_picture()+"' ";
-        sql+="c_price = '"+commodity.getC_price()+"' ";
-        sql+="c_vip_price = '"+commodity.getC_vip_price()+"' ";
+        sql+="c_name = '"+commodity.getC_name()+"' ,";
+        sql+="c_number = '"+commodity.getC_number()+"' ,";
+        sql+="c_picture = '"+commodity.getC_picture()+"' ,";
+        sql+="c_price = '"+commodity.getC_price()+"' ,";
+        sql+="c_vip_price = '"+commodity.getC_vip_price()+"' ,";
         sql+="c_describe = '"+commodity.getC_describe()+"' ";
         sql+="WHERE c_id = '"+commodity.getC_id()+"';";
 
@@ -86,8 +87,9 @@ public class CommodityDao implements ICommodityDao {
         String sql = "SELECT * FROM commodity WHERE commodity_class_cc_id = '"+commodity_class_cc_id+"';";
         ResultSet rs = JdbcUtils.exeSqlQuery(sql);
         List<Commodity> list = new LinkedList<Commodity>();
-        Commodity c = new Commodity();
+        Commodity c = null;
         while(rs.next()){
+            c = new Commodity();
             c.setC_id(rs.getString("c_id"));
             c.setC_name(rs.getString("c_name"));
             c.setCommodity_class_cc_id(rs.getString("commodity_class_cc_id"));

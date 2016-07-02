@@ -1,5 +1,6 @@
-package dao;
+package dao.impl;
 
+import dao.ICommodityClassDao;
 import entity.CommodityClass;
 import utils.JdbcUtils;
 
@@ -9,7 +10,7 @@ import java.sql.SQLException;
 /**
  * Created by hjc on 16-7-2.
  */
-public class CommodityClassDao implements ICommodityClassDao{
+public class CommodityClassDao implements ICommodityClassDao {
     @Override
     public boolean add(CommodityClass commodityClass) {
         //添加商品类
