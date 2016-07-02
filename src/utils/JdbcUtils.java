@@ -29,7 +29,7 @@ public class JdbcUtils {
             try {
                 // 读取db.properties文件中的数据库配置信息
                 InputStream in = JdbcUtils.class.getClassLoader()
-                        .getResourceAsStream("db.properties");
+                        .getResourceAsStream("utils/db.properties");
                 Properties prop = new Properties();
                 prop.load(in);
 

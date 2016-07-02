@@ -1,8 +1,12 @@
 package test;
 
+import dao.CommodityClassDao;
+import entity.CommodityClass;
 import org.junit.*;
+import utils.JdbcUtils;
 import utils.TransTimestamp;
 
+import java.sql.ResultSet;
 import java.sql.Timestamp;
 
 import static org.junit.Assert.*;
@@ -13,14 +17,13 @@ import static org.junit.Assert.*;
 public class TestTest {
     @org.junit.Test
     public void test1() throws Exception {
+        CommodityClassDao ccDao = new CommodityClassDao();
+        CommodityClass cc = new CommodityClass();
 
-            Timestamp timestamp1 = TransTimestamp.YMDToTimestamp(2016,7,2);
-            Timestamp timestamp2 = TransTimestamp.stringToTimestamp("2016-7-1 22:03:30");
-            String day = TransTimestamp.timestampToDayString(timestamp1);
-            String sec = TransTimestamp.timestampToSecString(timestamp1);
-            System.out.println(day);
-            System.out.println(sec);
+        cc.setCc_id("11");
+        cc.setCc_name("类");
 
+        ccDao.delete(cc);
     }
 
 }
