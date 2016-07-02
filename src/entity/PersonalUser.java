@@ -5,6 +5,7 @@ import java.sql.Timestamp;
 /**
  * Created by cxspace on 16-7-1.
  */
+
 public class PersonalUser {
     private String person_id;
 
@@ -109,8 +110,8 @@ public class PersonalUser {
     @Override
     public String toString() {
         return "PersonalUser{" +
-                "person_id=" + person_id +
-                ", user_user_id=" + user_user_id +
+                "person_id='" + person_id + '\'' +
+                ", user_user_id='" + user_user_id + '\'' +
                 ", major_businesses='" + major_businesses + '\'' +
                 ", receiver_address='" + receiver_address + '\'' +
                 ", person_name='" + person_name + '\'' +

@@ -12,6 +12,15 @@ public class User {
     private String user_id;
     private String user_phone;
     private String user_password;
+    private int flag;
+
+    public int getFlag() {
+        return flag;
+    }
+
+    public void setFlag(int flag) {
+        this.flag = flag;
+    }
 
     public String getUser_id() {
         return user_id;
@@ -35,5 +44,15 @@ public class User {
 
     public void setUser_password(String user_password) {
         this.user_password = user_password;
+    }
+
+    @Override
+    public String toString() {
+        return "User{" +
+                "user_id='" + user_id + '\'' +
+                ", user_phone='" + user_phone + '\'' +
+                ", user_password='" + user_password + '\'' +
+                ", flag=" + flag +
+                '}';
     }
 }

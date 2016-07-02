@@ -8,16 +8,16 @@ import java.util.Random;
 public class WebUtils {
 
     /*
-         产生一个12位长度的id号
+         产生一个len位长度的id号
 
      */
 
-    public static String getRandomId() {
+    public static String getRandomId(int len) {
         StringBuffer sb = new StringBuffer();
 
         Random r = new Random();
 
-        for (int i = 0; i < 12; i++) {
+        for (int i = 0; i < len; i++) {
             sb.append(r.nextInt(10));
         }
 
