@@ -6,13 +6,13 @@ package entity;
 public class Commodity {
     //具体商品类
 
-    private int c_id;
+    private String c_id;
     //商品id
 
     private String c_name;
     //商品名
 
-    private int commodity_class_cc_id;
+    private String commodity_class_cc_id;
     //该商品的类别id
 
     private int c_number;
@@ -30,11 +30,11 @@ public class Commodity {
     private String c_describe;
     //该商品的描述
 
-    public int getC_id() {
+    public String getC_id() {
         return c_id;
     }
 
-    public void setC_id(int c_id) {
+    public void setC_id(String c_id) {
         this.c_id = c_id;
     }
 
@@ -46,11 +46,11 @@ public class Commodity {
         this.c_name = c_name;
     }
 
-    public int getCommodity_class_cc_id() {
+    public String getCommodity_class_cc_id() {
         return commodity_class_cc_id;
     }
 
-    public void setCommodity_class_cc_id(int commodity_class_cc_id) {
+    public void setCommodity_class_cc_id(String commodity_class_cc_id) {
         this.commodity_class_cc_id = commodity_class_cc_id;
     }
 

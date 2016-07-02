@@ -11,7 +11,7 @@ public class Indent {
     private String indent_id;
     //订单id（使用随机生成的字符串）
 
-    private long buyer_id;
+    private String buyer_id;
     //购买者的id
 
     private Timestamp order_time;
@@ -44,11 +44,11 @@ public class Indent {
         this.indent_id = indent_id;
     }
 
-    public long getBuyer_id() {
+    public String getBuyer_id() {
         return buyer_id;
     }
 
-    public void setBuyer_id(long buyer_id) {
+    public void setBuyer_id(String buyer_id) {
         this.buyer_id = buyer_id;
     }
 

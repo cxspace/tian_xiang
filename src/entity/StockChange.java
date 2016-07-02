@@ -7,7 +7,7 @@ import java.sql.Timestamp;
  */
 public class StockChange {
 
-    private long stock_change_id;
+    private String stock_change_id;
 
     private String commodity_class;
 
@@ -23,11 +23,11 @@ public class StockChange {
 
     private String charge_person;
 
-    public long getStock_change_id() {
+    public String getStock_change_id() {
         return stock_change_id;
     }
 
-    public void setStock_change_id(long stock_change_id) {
+    public void setStock_change_id(String stock_change_id) {
         this.stock_change_id = stock_change_id;
     }
 
