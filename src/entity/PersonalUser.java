@@ -5,10 +5,11 @@ import java.sql.Timestamp;
 /**
  * Created by cxspace on 16-7-1.
  */
-public class PersonalUser {
-    private long person_id;
 
-    private long user_user_id;
+public class PersonalUser {
+    private String person_id;
+
+    private String user_user_id;
 
     private String major_businesses;
 
@@ -26,19 +27,19 @@ public class PersonalUser {
 
     private String weixin;
 
-    public long getPerson_id() {
+    public String getPerson_id() {
         return person_id;
     }
 
-    public void setPerson_id(long person_id) {
+    public void setPerson_id(String person_id) {
         this.person_id = person_id;
     }
 
-    public long getUser_user_id() {
+    public String getUser_user_id() {
         return user_user_id;
     }
 
-    public void setUser_user_id(long user_user_id) {
+    public void setUser_user_id(String user_user_id) {
         this.user_user_id = user_user_id;
     }
 
@@ -109,8 +110,8 @@ public class PersonalUser {
     @Override
     public String toString() {
         return "PersonalUser{" +
-                "person_id=" + person_id +
-                ", user_user_id=" + user_user_id +
+                "person_id='" + person_id + '\'' +
+                ", user_user_id='" + user_user_id + '\'' +
                 ", major_businesses='" + major_businesses + '\'' +
                 ", receiver_address='" + receiver_address + '\'' +
                 ", person_name='" + person_name + '\'' +
