@@ -8,8 +8,9 @@ import java.sql.Timestamp;
 
 public class CompanyUser {
 
-    private long company_id;
-    private long user_user_id;
+    private String company_id;
+    private String user_user_id;
+
     private String company_name;
     private String major_businesses;
     private String receiver_address;
@@ -23,25 +24,37 @@ public class CompanyUser {
 
     private String cp_phone_number;
 
+    private String company_phone_number;
+
+    public String getCompany_phone_number() {
+        return company_phone_number;
+    }
+
+    public void setCompany_phone_number(String company_phone_number) {
+        this.company_phone_number = company_phone_number;
+    }
+
+    public String getCompany_id() {
+        return company_id;
+    }
+
+    public void setCompany_id(String company_id) {
+        this.company_id = company_id;
+    }
+
+    public String getUser_user_id() {
+        return user_user_id;
+    }
+
+    public void setUser_user_id(String user_user_id) {
+        this.user_user_id = user_user_id;
+    }
+
     private String cp_qq;
 
     private String cp_weixin;
 
-    public long getCompany_id() {
-        return company_id;
-    }
 
-    public void setCompany_id(long company_id) {
-        this.company_id = company_id;
-    }
-
-    public long getUser_user_id() {
-        return user_user_id;
-    }
-
-    public void setUser_user_id(long user_user_id) {
-        this.user_user_id = user_user_id;
-    }
 
     public String getCompany_name() {
         return company_name;
@@ -118,8 +131,8 @@ public class CompanyUser {
     @Override
     public String toString() {
         return "CompanyUser{" +
-                "company_id=" + company_id +
-                ", user_user_id=" + user_user_id +
+                "company_id='" + company_id + '\'' +
+                ", user_user_id='" + user_user_id + '\'' +
                 ", company_name='" + company_name + '\'' +
                 ", major_businesses='" + major_businesses + '\'' +
                 ", receiver_address='" + receiver_address + '\'' +
@@ -127,6 +140,7 @@ public class CompanyUser {
                 ", gender=" + gender +
                 ", cp_birthday=" + cp_birthday +
                 ", cp_phone_number='" + cp_phone_number + '\'' +
+                ", company_phone_number='" + company_phone_number + '\'' +
                 ", cp_qq='" + cp_qq + '\'' +
                 ", cp_weixin='" + cp_weixin + '\'' +
                 '}';
