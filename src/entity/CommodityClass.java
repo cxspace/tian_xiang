@@ -6,7 +6,7 @@ package entity;
 public class CommodityClass {
     //商品类别类
 
-    private int cc_id;
+    private String cc_id;
     //商品类别id
     private String cc_name;
     //商品类别名
@@ -19,15 +19,15 @@ public class CommodityClass {
         this.cc_name = cc_name;
     }
 
-    public int getCc_id() {
+    public String getCc_id() {
         return cc_id;
     }
 
-    public void setCc_id(int cc_id) {
+    public void setCc_id(String cc_id) {
         this.cc_id = cc_id;
     }
 
-    public CommodityClass(int cc_id, String cc_name) {
+    public CommodityClass(String cc_id, String cc_name) {
         this.cc_id = cc_id;
         this.cc_name = cc_name;
     }
