@@ -26,14 +26,6 @@ public class CompanyUser {
 
     private String company_phone_number;
 
-    public String getCompany_phone_number() {
-        return company_phone_number;
-    }
-
-    public void setCompany_phone_number(String company_phone_number) {
-        this.company_phone_number = company_phone_number;
-    }
-
     public String getCompany_id() {
         return company_id;
     }
@@ -54,7 +46,13 @@ public class CompanyUser {
 
     private String cp_weixin;
 
+    public String getCompany_phone_number() {
+        return company_phone_number;
+    }
 
+    public void setCompany_phone_number(String company_phone_number) {
+        this.company_phone_number = company_phone_number;
+    }
 
     public String getCompany_name() {
         return company_name;
