@@ -6,6 +6,8 @@ import utils.JdbcUtils;
 
 import java.sql.ResultSet;
 import java.sql.SQLException;
+import java.util.LinkedList;
+import java.util.List;
 
 /**
  * Created by cxspace on 16-7-2.
@@ -122,5 +124,49 @@ public class PersonalUserDao implements IPersonalUserDao{
 
         }
         return personalUser;
+    }
+
+    @Override
+    public List<PersonalUser> findAll() throws SQLException {
+
+        ResultSet rs = null;
+
+        List <PersonalUser> allPersonalUsers = new LinkedList<PersonalUser>();
+
+        strSql = "SELECT * FROM personal_user";
+
+        rs = JdbcUtils.exeSqlQuery(strSql);
+
+        if(rs.next()){
+
+            PersonalUser personalUser = new PersonalUser();
+
+            personalUser.setPerson_id(rs.getString("person_id"));
+
+            personalUser.setUser_user_id(rs.getString("user_user_id"));
+
+            personalUser.setMajor_businesses(rs.getString("major_businesses"));
+
+            personalUser.setReceiver_address(rs.getString("receiver_address"));
+
+            personalUser.setPerson_name(rs.getString("person_name"));
+
+            personalUser.setGender(rs.getInt("gender"));
+
+            personalUser.setBirthday(rs.getTimestamp("birthday"));
+
+            personalUser.setPhone_number(rs.getString("phone_number"));
+
+            personalUser.setQq(rs.getString("qq"));
+
+            personalUser.setWeixin(rs.getString("weixin"));
+
+            allPersonalUsers.add(personalUser);
+
+        }else {
+            return null;
+        }
+
+        return allPersonalUsers;
     }
 }
