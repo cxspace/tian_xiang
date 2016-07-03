@@ -27,6 +27,7 @@ public class TransTimestamp {
     }
 
     public static Timestamp YMDToTimestamp(int year,int month,int day){
+        //接受年月日转化为Timestamp
         String time = year+"-"+month+"-"+day+" 00:00:00";
         return stringToTimestamp(time);
     }
