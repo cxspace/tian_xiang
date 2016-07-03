@@ -3,6 +3,7 @@ package dao;
 import entity.CompanyUser;
 
 import java.sql.SQLException;
+import java.util.List;
 
 
 /**
@@ -26,5 +27,8 @@ public interface ICompanyUserDao {
 
     public CompanyUser findFromPhone(String phone) throws SQLException;
 
+    //查找所有公司用户
+
+    public List<CompanyUser> findAll() throws SQLException;
 
 }

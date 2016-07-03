@@ -23,11 +23,9 @@ public class UserDao implements IUserDao {
 
         id随机12数
 
-
-
      */
 
-    @Override
+
     public boolean add(User user) {
 
         strSql = "insert into user(user_id ,user_phone , user_password , user_flag ) values (";
@@ -44,7 +42,7 @@ public class UserDao implements IUserDao {
          根据电话和密码查询用户
      */
 
-    @Override
+
     public User find(String phone, String password) throws SQLException {
 
         ResultSet rs = null;
