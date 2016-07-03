@@ -6,6 +6,8 @@ import utils.JdbcUtils;
 
 import java.sql.ResultSet;
 import java.sql.SQLException;
+import java.util.ArrayList;
+import java.util.List;
 
 /**
  * Created by cxspace on 16-7-2.
@@ -110,5 +112,42 @@ public class CompanyUserDao implements ICompanyUserDao {
             return null;
         }
         return companyUser;
+    }
+
+    @Override
+    public List<CompanyUser> findAll() throws SQLException {
+
+        ResultSet rs;
+
+        List<CompanyUser> allCompanyUsers = new ArrayList<CompanyUser>();
+
+        strSql = "select * from company_user";
+
+        rs = JdbcUtils.exeSqlQuery(strSql);
+
+        if (rs.next()){
+
+            CompanyUser companyUser = new CompanyUser();
+
+            companyUser.setCompany_id(rs.getString("company_id"));
+            companyUser.setUser_user_id(rs.getString("user_user_id"));
+            companyUser.setCompany_name(rs.getString("company_name"));
+            companyUser.setMajor_businesses(rs.getString("major_businesses"));
+            companyUser.setReceiver_address(rs.getString("receiver_address"));
+            companyUser.setCp_name(rs.getString("cp_name"));
+            companyUser.setGender(rs.getInt("gender"));
+            companyUser.setCp_birthday(rs.getTimestamp("cp_birthday"));
+            companyUser.setCp_phone_number(rs.getString("cp_phone_number"));
+            companyUser.setCompany_phone_number(rs.getString("company_phone_number"));
+            companyUser.setCp_qq(rs.getString("cp_qq"));
+            companyUser.setCp_weixin(rs.getString("cp_weixin"));
+
+            allCompanyUsers.add(companyUser);
+
+        }else {
+            return null;
+        }
+
+        return allCompanyUsers;
     }
 }
