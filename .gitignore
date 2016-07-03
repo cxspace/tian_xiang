@@ -3,6 +3,8 @@
 将删除 .gitignore
 /.idea/workspace.xml
 
+/src/test/
+
 
 /out/
 /.idea/uiDesigner.xml
