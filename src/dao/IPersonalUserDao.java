@@ -3,6 +3,7 @@ package dao;
 import entity.PersonalUser;
 
 import java.sql.SQLException;
+import java.util.List;
 
 /**
  * Created by cxspace on 16-7-2.
@@ -28,5 +29,7 @@ public interface IPersonalUserDao {
     //通过phone查询个人用户
     public PersonalUser findFromPhone(String phone) throws SQLException;
 
+    //查询所有个人用户
+    public List<PersonalUser> findAll() throws SQLException;
 
 }
