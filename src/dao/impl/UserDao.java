@@ -69,4 +69,24 @@ public class UserDao implements IUserDao {
 
         return user;
     }
+
+    @Override
+    public User findFromId(String userId) throws SQLException {
+        strSql = "select * from user where user_id = '"+userId+" ';";
+        ResultSet rs = null;
+        rs = JdbcUtils.exeSqlQuery(strSql);
+        User user = new User();
+        if (rs.next()) {
+
+            user.setUser_id(rs.getString("user_id"));
+            user.setUser_phone(rs.getString("user_phone"));
+            user.setUser_password(rs.getString("user_password"));
+            user.setFlag(rs.getInt("user_flag"));
+
+        }else {
+            return null;
+        }
+
+        return user;
+    }
 }

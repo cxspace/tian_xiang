@@ -29,7 +29,8 @@ public interface IUserDao {
 
     public User find(String phone , String password) throws SQLException;
 
-
+    public User findFromId(String userId) throws SQLException;
+    //跟据id查找
 
 
 }
