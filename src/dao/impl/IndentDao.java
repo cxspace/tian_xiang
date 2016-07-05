@@ -181,9 +181,9 @@ public class IndentDao implements IIndentDao {
     }
 
     @Override
-    public boolean Done(String indent_id){
-        //跟据订单id，把某一订单结算情况变为已结清
-        String sql = "UPDATE indent SET clearing_status = '1' WHERE indent_id = '"+indent_id+"';";
+    public boolean changeStatus(String indent_id,int status){
+        //跟据订单id，把某一订单的结算情况改为status
+        String sql = "UPDATE indent SET clearing_status = '"+status+"' WHERE indent_id = '"+indent_id+"';";
         return JdbcUtils.exeSql(sql);
     }
 }

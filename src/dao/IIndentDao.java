@@ -37,6 +37,6 @@ public interface IIndentDao {
     public List<Indent> findFromDeadline(Timestamp time) throws SQLException;
     //查找某一截至日期的订单
 
-    public boolean Done(String indent_id);
+    public boolean changeStatus(String indent_id,int status);
     //跟据订单id，把某一订单结算情况变为已结清
 }
