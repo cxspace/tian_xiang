@@ -137,7 +137,7 @@ public class PersonalUserDao implements IPersonalUserDao{
 
         rs = JdbcUtils.exeSqlQuery(strSql);
 
-        if(rs.next()){
+        while(rs.next()){
 
             PersonalUser personalUser = new PersonalUser();
 
@@ -163,8 +163,6 @@ public class PersonalUserDao implements IPersonalUserDao{
 
             allPersonalUsers.add(personalUser);
 
-        }else {
-            return null;
         }
 
         return allPersonalUsers;

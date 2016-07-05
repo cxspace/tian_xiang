@@ -24,6 +24,6 @@ public interface ICommodityClassDao {
     public CommodityClass findFromId(String commodityClassId) throws SQLException;
     //通过商品类id查找商品类
 
-    public CommodityClass findFromName(String commodityName) throws SQLException;
+    public CommodityClass findFromName(String commodityClassName) throws SQLException;
     //通过商品类名查找商品类
 }

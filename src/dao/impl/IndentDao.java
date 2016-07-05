@@ -135,11 +135,12 @@ public class IndentDao implements IIndentDao {
     @Override
     public List<Indent> findFromStatus(int status) throws SQLException {
         //跟据订单结算情况查询订单（倒序）,0是未结清，1是已结清?
+        List<Indent> list = new ArrayList<Indent>();
         if(status==0||status==1){
             String sql = "SELECT * FROM indent WHERE clearing_status = '"+status+"';";
             ResultSet rs = JdbcUtils.exeSqlQuery(sql);
             Indent indent = new Indent();
-            List<Indent> list = new LinkedList<Indent>();
+            list = new LinkedList<Indent>();
             while(rs.next()){
                 indent = new Indent();
                 indent.setIndent_id(rs.getString("indent_id"));
@@ -153,10 +154,9 @@ public class IndentDao implements IIndentDao {
                 indent.setClearing_status(rs.getInt("clearing_status"));
                 list.add(indent);
             }
-            return list;
-        }else{
-            throw new RuntimeException();
+
         }
+        return list;
     }
 
     @Override
@@ -181,9 +181,9 @@ public class IndentDao implements IIndentDao {
     }
 
     @Override
-    public boolean Done(String indent_id){
-        //跟据订单id，把某一订单结算情况变为已结清
-        String sql = "UPDATE indent SET clearing_status = '1' WHERE indent_id = '"+indent_id+"';";
+    public boolean changeStatus(String indent_id,int status){
+        //跟据订单id，把某一订单的结算情况改为status
+        String sql = "UPDATE indent SET clearing_status = '"+status+"' WHERE indent_id = '"+indent_id+"';";
         return JdbcUtils.exeSql(sql);
     }
 }
