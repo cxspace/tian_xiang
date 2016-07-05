@@ -3,6 +3,7 @@ package dao;
 import entity.CommodityClass;
 
 import java.sql.SQLException;
+import java.util.List;
 
 /**
  * Created by hjc on 16-7-1.
@@ -26,4 +27,10 @@ public interface ICommodityClassDao {
 
     public CommodityClass findFromName(String commodityClassName) throws SQLException;
     //通过商品类名查找商品类
+
+    /*
+    * 查找所有食物类
+    * */
+    public List<CommodityClass> findAll() throws SQLException;
+
 }

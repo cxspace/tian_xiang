@@ -6,6 +6,8 @@ import utils.JdbcUtils;
 
 import java.sql.ResultSet;
 import java.sql.SQLException;
+import java.util.ArrayList;
+import java.util.List;
 
 /**
  * Created by hjc on 16-7-2.
@@ -65,5 +67,26 @@ public class CommodityClassDao implements ICommodityClassDao {
             commodityclass.setCc_name(rs.getString("cc_name"));
         }
         return commodityclass;
+    }
+
+
+
+    @Override
+    public List<CommodityClass> findAll() throws SQLException {
+
+        String sql = "SELECT * FROM commodity_class;";
+        ResultSet rs = JdbcUtils.exeSqlQuery(sql);
+        List<CommodityClass> allClasses = new ArrayList<CommodityClass>();
+
+        while (rs.next()){
+
+            CommodityClass commodityClass = new CommodityClass();
+            commodityClass.setCc_id(rs.getString("cc_id"));
+            commodityClass.setCc_name(rs.getString("cc_name"));
+
+            allClasses.add(commodityClass);
+        }
+
+        return allClasses;
     }
 }
