@@ -38,9 +38,9 @@ public class FileUpUtils {
     * */
 
 
-     public static boolean fileUpload(HttpServletRequest request , String commodity_id){
+     public static String fileUpload(HttpServletRequest request , String commodity_id){
 
-         boolean flag = true;
+         String filename = "";
 
          try {
 
@@ -92,7 +92,7 @@ public class FileUpUtils {
 
                          System.out.println(temps[1]);
 
-                         String filename = commodity_id + "." +temps[1];
+                          filename = commodity_id + "." +temps[1];
 
                          String path = request.getServletContext().getRealPath("/upload");
 
@@ -106,8 +106,6 @@ public class FileUpUtils {
 
              } else {
 
-                 flag = false;
-
                  System.out.println("当前表单不是文件上传表单，处理失败！");
              }
          } catch (Exception e)
@@ -115,7 +113,7 @@ public class FileUpUtils {
              e.printStackTrace();
          }
 
-         return  flag;
+        return filename;
     }
 
 }
