@@ -10,7 +10,7 @@
     <script src="http://apps.bdimg.com/libs/jquery/2.1.1/jquery.min.js"></script>
     <script src="http://apps.bdimg.com/libs/bootstrap/3.3.0/js/bootstrap.min.js"></script>
   </head><body>
-    <form class="form-horizontal" role="form" method="post" action="${pageContext.request.contextPath}/AddGoodControl">
+    <form class="form-horizontal" role="form" method="post" enctype="multipart/form-data" action="${pageContext.request.contextPath}/AddGoodControl">
       <div class="form-group">
         <label for="firstname" class="col-sm-2 control-label">
           <br>

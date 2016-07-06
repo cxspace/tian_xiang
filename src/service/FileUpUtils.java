@@ -99,8 +99,6 @@ public class FileUpUtils {
 
                          String [] temps =type.split("\\/");
 
-                         System.out.println(temps[1]);
-
                          filename = commodity_id + "." +temps[1];
 
                          lists.add(filename);
