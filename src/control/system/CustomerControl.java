@@ -11,6 +11,7 @@ import javax.servlet.http.HttpServletResponse;
 import javax.servlet.http.HttpSession;
 import java.io.IOException;
 import java.sql.SQLException;
+import java.util.ArrayList;
 import java.util.List;
 
 /**
@@ -28,34 +29,30 @@ public class CustomerControl extends HttpServlet {
         //service
 
         HttpSession session = request.getSession();
-
         if(day==-1){
             //所有客户
-            List<Customer> allCustomer = null;
+            List<Customer> allCustomer = new ArrayList<Customer>();
             try {
                 allCustomer = customers.findAll();
             } catch (SQLException e) {
                 e.printStackTrace();
             }
-            if(allCustomer!=null){
-                session.setAttribute("allCustomer",allCustomer);
-            }
+            session.setAttribute("allCustomer",allCustomer);
             request.getRequestDispatcher("/system/all_customers.jsp").forward(request,response);
         }else if(day==0){
             //未到货Customer
-            List<Customer> underHandCustomer = null;
+            List<Customer> underHandCustomer = new ArrayList<Customer>();
             try {
                 underHandCustomer = customers.findUnderHandCustomer();
             } catch (SQLException e) {
                 e.printStackTrace();
             }
-            if(underHandCustomer!=null){
-                session.setAttribute("currentCustomer",underHandCustomer);
-            }
+
+            session.setAttribute("currentCustomer",underHandCustomer);
             request.getRequestDispatcher("/system/current_customers.jsp").forward(request,response);
         }else{
             //最近day天定过单的Customer
-            List<Customer> nearlyCustomer = null;
+            List<Customer> nearlyCustomer = new ArrayList<Customer>();
             String key = "nearly"+day+"Customer";
             //session中输入的键值
 
@@ -65,9 +62,8 @@ public class CustomerControl extends HttpServlet {
                 e.printStackTrace();
             }
 
-            if(nearlyCustomer!=null){
-                session.setAttribute(key,nearlyCustomer);
-            }
+            session.setAttribute(key,nearlyCustomer);
+
 
             switch (day){
                 case 7:

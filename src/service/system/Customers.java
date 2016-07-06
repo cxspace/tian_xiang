@@ -33,7 +33,7 @@ public class Customers {
         //未结算清单表
 
         List<Customer> AllCustomer = new ArrayList<Customer>();
-
+        
         for(PersonalUser personalUser : personalUserList){
             int unStatus = 0;
             for(Indent indent : unStatusIndentList){
