@@ -8,14 +8,15 @@ import org.apache.commons.fileupload.servlet.ServletFileUpload;
 
 import javax.servlet.http.HttpServletRequest;
 import java.io.File;
+import java.util.ArrayList;
 import java.util.List;
+import java.util.Map;
 import java.util.Random;
 
 /**
  * Created by cxspace on 16-7-1.
  */
 public class FileUpUtils {
-
 
     /*
     *
@@ -38,9 +39,12 @@ public class FileUpUtils {
     * */
 
 
-     public static String fileUpload(HttpServletRequest request , String commodity_id){
+     public static List<String> fileUpload(HttpServletRequest request , String commodity_id){
 
          String filename = "";
+
+         List<String> lists = new ArrayList<String>();
+
 
          try {
 
@@ -70,6 +74,11 @@ public class FileUpUtils {
                  for (FileItem item : list) {
                      // 判断：普通文本数据
                      if (item.isFormField()) {
+                         // 普通文本数据
+
+                         String fieldName = item.getFieldName();	// 表单元素名称
+
+                         lists.add(item.getString());		// 表单元素名称， 对应的数据
 
                       }
 
@@ -92,7 +101,9 @@ public class FileUpUtils {
 
                          System.out.println(temps[1]);
 
-                          filename = commodity_id + "." +temps[1];
+                         filename = commodity_id + "." +temps[1];
+
+                         lists.add(filename);
 
                          String path = request.getServletContext().getRealPath("/upload");
 
@@ -113,7 +124,7 @@ public class FileUpUtils {
              e.printStackTrace();
          }
 
-        return filename;
+        return lists;
     }
 
 }
