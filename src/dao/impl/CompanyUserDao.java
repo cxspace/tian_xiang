@@ -125,7 +125,7 @@ public class CompanyUserDao implements ICompanyUserDao {
 
         rs = JdbcUtils.exeSqlQuery(strSql);
 
-        if (rs.next()){
+        while (rs.next()){
 
             CompanyUser companyUser = new CompanyUser();
 
@@ -144,8 +144,6 @@ public class CompanyUserDao implements ICompanyUserDao {
 
             allCompanyUsers.add(companyUser);
 
-        }else {
-            return null;
         }
 
         return allCompanyUsers;
