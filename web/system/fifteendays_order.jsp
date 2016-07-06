@@ -1,5 +1,6 @@
 <%@ page import="service.system.frontBean.Order" %>
 <%@ page import="java.util.List" %>
+<%@ page import="java.text.DecimalFormat" %>
 <%@ page contentType="text/html;charset=UTF-8" language="java" %>
 <html><head>
     <meta charset="utf-8">
@@ -62,13 +63,14 @@
                   <th>联系人</th>
                   <th>联系方式</th>
                   <th>订购产品清单</th>
-                  <th>总结</th>
+                  <th>总价</th>
                   <th>结算情况</th>
                 </tr>
               </thead>
               <tbody>
               <%
                 List<Order> currentOrder = (List<Order>) session.getAttribute("nearly15Order");
+                DecimalFormat df = new DecimalFormat("#.00");
                 for(int i=0;i<currentOrder.size();++i){
                   Order order = currentOrder.get(i);
               %>
@@ -80,7 +82,7 @@
                 <td><%=order.getCpName()%></td>
                 <td><%=order.getPhone()%></td>
                 <td><%=order.getOrdered()%></td>
-                <td><%=order.getTotalPrice()%></td>
+                <td><%=df.format(order.getTotalPrice())%></td>
                 <td><%=order.getStatus()%></td>
               </tr>
               <%

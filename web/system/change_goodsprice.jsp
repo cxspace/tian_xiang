@@ -1,5 +1,6 @@
 <%@ page import="service.system.frontBean.Good" %>
 <%@ page import="java.util.List" %>
+<%@ page import="java.text.DecimalFormat" %>
 <%@ page contentType="text/html;charset=UTF-8" language="java" %>
 <html><head>
     <meta charset="utf-8">
@@ -27,6 +28,7 @@
 
               <%
                 List<Good> goodList = (List<Good>) session.getAttribute("goodList");
+                DecimalFormat df = new DecimalFormat("#.00");
                 int k=1;
                 for(Good good : goodList){
               %>
@@ -35,7 +37,7 @@
                   <td><%=k%></td>
                   <td><%=good.getGoodName()%></td>
                   <td><%=good.getGoodClassName()%></td>
-                  <td><%=good.getGoodPrice()%></td>
+                  <td><%=df.format(good.getGoodPrice())%></td>
                   <td>
                     <form class="form-horizontal" role="form" method="post" action="${pageContext.request.contextPath}/GoodChangePrice2?goodId=<%=good.getGoodId()%>">
                       <div class="col-md-12 text-center">
