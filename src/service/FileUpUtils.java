@@ -78,7 +78,8 @@ public class FileUpUtils {
 
                          String fieldName = item.getFieldName();	// 表单元素名称
 
-                         lists.add(item.getString());		// 表单元素名称， 对应的数据
+                         //指定编码就不会乱码
+                         lists.add(item.getString("utf-8"));		// 表单元素名称， 对应的数据
 
                       }
 
