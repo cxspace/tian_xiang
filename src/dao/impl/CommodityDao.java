@@ -61,6 +61,12 @@ public class CommodityDao implements ICommodityDao {
     }
 
     @Override
+    public boolean updateComodityNumber(int crruentNumber) {
+        String sql = "UPDATE commodity SET c_number = '"+crruentNumber+"';";
+        return JdbcUtils.exeSql(sql);
+    }
+
+    @Override
     public Commodity findFromC_Id(String c_id) throws SQLException {
         //通过商品id查找商品
         String sql = "SELECT * FROM commodity WHERE c_id = '"+c_id+"';";

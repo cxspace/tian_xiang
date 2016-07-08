@@ -3,4 +3,268 @@
          xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
          xsi:schemaLocation="http://xmlns.jcp.org/xml/ns/javaee http://xmlns.jcp.org/xml/ns/javaee/web-app_3_1.xsd"
          version="3.1">
+
+    <!--
+    <welcome-file-list>
+        <welcome-file>/front/index.jsp</welcome-file>
+    </welcome-file-list>
+    -->
+
+    <welcome-file-list>
+        <welcome-file>/index.jsp</welcome-file>
+    </welcome-file-list>
+
+    
+    <!--处理个人用户注册的servlet-->
+    <servlet>
+        <servlet-name>personalUserRegister</servlet-name>
+        <servlet-class>control.personalUserRegister</servlet-class>
+    </servlet>
+    <servlet-mapping>
+        <servlet-name>personalUserRegister</servlet-name>
+        <url-pattern>/personalUserRegister</url-pattern>
+    </servlet-mapping>
+    
+    <!--处理公司用户注册的servlet-->
+    <servlet>
+        <servlet-name>companyUserRegister</servlet-name>
+        <servlet-class>control.companyUserRegister</servlet-class>
+    </servlet>
+    
+    <servlet-mapping>
+        <servlet-name>companyUserRegister</servlet-name>
+        <url-pattern>/companyUserRegister</url-pattern>
+    </servlet-mapping>
+    
+    <!--处理用户登录-->
+    
+    <servlet>
+        <servlet-name>userLogin</servlet-name>
+        <servlet-class>control.userLogin</servlet-class>
+    </servlet>
+    <servlet-mapping>
+        <servlet-name>userLogin</servlet-name>
+        <url-pattern>/userLogin</url-pattern>
+    </servlet-mapping>
+
+    <!--选择类别的servlet-->
+    <servlet>
+        <servlet-name>SelectClass</servlet-name>
+        <servlet-class>control.SelectClass</servlet-class>
+    </servlet>
+
+    <servlet-mapping>
+        <servlet-name>SelectClass</servlet-name>
+        <url-pattern>/SelectClass</url-pattern>
+    </servlet-mapping>
+
+    <!--新用户下单处理-->
+    <servlet>
+        <servlet-name>newUserOrder</servlet-name>
+        <servlet-class>control.newUserOrder</servlet-class>
+    </servlet>
+
+    <servlet-mapping>
+        <servlet-name>newUserOrder</servlet-name>
+        <url-pattern>/newUserOrder</url-pattern>
+    </servlet-mapping>
+    
+    <!--通过用户选择的商品，拿到用户信息-->
+    <servlet>
+        <servlet-name>getOrderUserMessage</servlet-name>
+        <servlet-class>control.getOrderUserMessage</servlet-class>
+    </servlet>
+    
+    <servlet-mapping>
+        <servlet-name>getOrderUserMessage</servlet-name>
+        <url-pattern>/getOrderUserMessage</url-pattern>
+    </servlet-mapping>
+    
+    <!--删除订单-->
+    
+    <servlet>
+        <servlet-name>deleteOrder</servlet-name>
+        <servlet-class>control.deleteOrder</servlet-class>
+    </servlet>
+    
+    <servlet-mapping>
+        <servlet-name>deleteOrder</servlet-name>
+        <url-pattern>/deleteOrder</url-pattern>
+    </servlet-mapping>
+    
+    <!--结算订单处理-->
+    
+    <servlet>
+        <servlet-name>settleAccount</servlet-name>
+        <servlet-class>control.settleAccount</servlet-class>
+    </servlet>
+    
+    <servlet-mapping>
+        <servlet-name>settleAccount</servlet-name>
+        <url-pattern>/settleAccount</url-pattern>
+    </servlet-mapping>
+
+    <!-- 注销逻辑-->
+    <servlet>
+        <servlet-name>loginOut</servlet-name>
+        <servlet-class>control.loginOut</servlet-class>
+    </servlet>
+    
+    <servlet-mapping>
+        <servlet-name>loginOut</servlet-name>
+        <url-pattern>/loginOut</url-pattern>
+    </servlet-mapping>
+
+
+    <servlet>
+        <servlet-name>ManagerLogin</servlet-name>
+        <servlet-class>control.system.ManagerLogin</servlet-class>
+    </servlet>
+    
+    <servlet-mapping>
+        <servlet-name>ManagerLogin</servlet-name>
+        <url-pattern>/ManagerLogin</url-pattern>
+    </servlet-mapping>
+
+
+    <servlet>
+        <servlet-name>AddGoodControl</servlet-name>
+        <servlet-class>control.system.AddGoodControl</servlet-class>
+    </servlet>
+
+    <servlet-mapping>
+        <servlet-name>AddGoodControl</servlet-name>
+        <url-pattern>/AddGoodControl</url-pattern>
+    </servlet-mapping>
+
+    <servlet>
+        <servlet-name>CustomerControl</servlet-name>
+         <servlet-class>control.system.CustomerControl</servlet-class>
+    </servlet>
+
+    <servlet-mapping>
+        <servlet-name>CustomerControl</servlet-name>
+        <url-pattern>/CustomerControl</url-pattern>
+    </servlet-mapping>
+
+    <servlet>
+        <servlet-name>CustomerFindFromName</servlet-name>
+        <servlet-class>control.system.CustomerFindFromName</servlet-class>
+    </servlet>
+
+    <servlet-mapping>
+        <servlet-name>CustomerFindFromName</servlet-name>
+        <url-pattern>/CustomerFindFromName</url-pattern>
+    </servlet-mapping>
+
+    <servlet>
+        <servlet-name>GoodChangePrice1</servlet-name>
+        <servlet-class>control.system.GoodChangePrice1</servlet-class>
+    </servlet>
+
+    <servlet-mapping>
+        <servlet-name>GoodChangePrice1</servlet-name>
+        <url-pattern>/GoodChangePrice1</url-pattern>
+    </servlet-mapping>
+
+    <servlet>
+        <servlet-name>GoodChangePrice2</servlet-name>
+        <servlet-class>control.system.GoodChangePrice2</servlet-class>
+    </servlet>
+
+    <servlet-mapping>
+        <servlet-name>GoodChangePrice2</servlet-name>
+        <url-pattern>/GoodChangePrice2</url-pattern>
+    </servlet-mapping>
+
+    <servlet>
+        <servlet-name>GoodDelete1</servlet-name>
+        <servlet-class>control.system.GoodDelete1</servlet-class>
+    </servlet>
+
+    <servlet-mapping>
+        <servlet-name>GoodDelete1</servlet-name>
+        <url-pattern>/GoodDelete1</url-pattern>
+    </servlet-mapping>
+
+    <servlet>
+        <servlet-name>GoodDelete2</servlet-name>
+        <servlet-class>control.system.GoodDelete2</servlet-class>
+    </servlet>
+
+    <servlet-mapping>
+        <servlet-name>GoodDelete2</servlet-name>
+        <url-pattern>/GoodDelete2</url-pattern>
+    </servlet-mapping>
+
+    <servlet>
+        <servlet-name>OrderControl</servlet-name>
+        <servlet-class>control.system.OrderControl</servlet-class>
+    </servlet>
+
+    <servlet-mapping>
+        <servlet-name>OrderControl</servlet-name>
+        <url-pattern>/OrderControl</url-pattern>
+    </servlet-mapping>
+
+    <servlet>
+        <servlet-name>OrderFindFromName</servlet-name>
+        <servlet-class>control.system.OrderFindFromName</servlet-class>
+    </servlet>
+
+    <servlet-mapping>
+        <servlet-name>OrderFindFromName</servlet-name>
+        <url-pattern>/OrderFindFromName</url-pattern>
+    </servlet-mapping>
+
+
+    <servlet>
+        <servlet-name>OrderFindFromYMD</servlet-name>
+        <servlet-class>control.system.OrderFindFromYMD</servlet-class>
+    </servlet>
+
+    <servlet-mapping>
+        <servlet-name>OrderFindFromYMD</servlet-name>
+        <url-pattern>/OrderFindFromYMD</url-pattern>
+    </servlet-mapping>
+
+    <servlet>
+        <servlet-name>OrderFindUnStatus</servlet-name>
+        <servlet-class>control.system.OrderFindUnStatus</servlet-class>
+    </servlet>
+
+    <servlet-mapping>
+        <servlet-name>OrderFindUnStatus</servlet-name>
+        <url-pattern>/OrderFindUnStatus</url-pattern>
+    </servlet-mapping>
+
+    <servlet>
+        <servlet-name>RepertoryControl</servlet-name>
+        <servlet-class>control.system.RepertoryControl</servlet-class>
+    </servlet>
+
+    <servlet-mapping>
+        <servlet-name>RepertoryControl</servlet-name>
+        <url-pattern>/RepertoryControl</url-pattern>
+    </servlet-mapping>
+
+    <servlet>
+        <servlet-name>RepertoryFindFromCommmdityName</servlet-name>
+        <servlet-class>control.system.RepertoryFindFromCommmdityName</servlet-class>
+    </servlet>
+
+    <servlet-mapping>
+        <servlet-name>RepertoryFindFromCommmdityName</servlet-name>
+        <url-pattern>/RepertoryFindFromCommodityName</url-pattern>
+    </servlet-mapping>
+    
+    <servlet>
+        <servlet-name>fileServlet</servlet-name>
+        <servlet-class>control.fileServlet</servlet-class>
+    </servlet>
+    <servlet-mapping>
+        <servlet-name>fileServlet</servlet-name>
+        <url-pattern>/fileServlet</url-pattern>
+    </servlet-mapping>
+
 </web-app>

@@ -10,6 +10,7 @@ import java.util.List;
  * Created by hjc on 16-7-2.
  */
 public interface IIndentDao {
+
     public boolean add(Indent indent);
     //增加商品订单
 
@@ -36,7 +37,10 @@ public interface IIndentDao {
 
     public List<Indent> findFromDeadline(Timestamp time) throws SQLException;
     //查找某一截至日期的订单
-
+    
     public boolean changeStatus(String indent_id,int status);
-    //跟据订单id，把某一订单结算情况变为已结清
+    //跟据订单id,把某一订单结算情况变
+
+    //根据订单id,改变订单结算方式
+    public boolean changeMethod(String indent_id,String method);
 }

@@ -5,11 +5,11 @@
 <html><head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <script type="text/javascript" src="http://cdnjs.cloudflare.com/ajax/libs/jquery/2.0.3/jquery.min.js"></script>
-    <script type="text/javascript" src="http://netdna.bootstrapcdn.com/bootstrap/3.3.4/js/bootstrap.min.js"></script>
-    <link href="http://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.3.0/css/font-awesome.min.css" rel="stylesheet" type="text/css">
-    <link href="${pageContext.request.contextPath}/system/css/Untitled.css" rel="stylesheet" type="text/css">
-  </head><body>
+  <script type="text/javascript" src="${pageContext.request.contextPath}/front/js/jquery.min.js"></script>
+  <script type="text/javascript" src="${pageContext.request.contextPath}/front/js/bootstrap.min.js"></script>
+  <link href="http://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.3.0/css/font-awesome.min.css" rel="stylesheet" type="text/css">
+  <link href="${pageContext.request.contextPath}/system/css/bootstrap.min.css" rel="stylesheet" type="text/css">
+</head><body>
     <div class="navbar navbar-default navbar-static-top as">
       <div class="container">
         <div class="navbar-header">
@@ -25,12 +25,22 @@
         <div class="collapse navbar-collapse" id="navbar-ex-collapse">
           <ul class="nav navbar-nav navbar-right">
             <form class="navbar-form navbar-left text-center" role="search" method="post" action="${pageContext.request.contextPath}/OrderFindFromYMD">
+
+
+
+
               <div class="form-group">
                 <input type="text" class="form-control" name="year">年</div>
               <div class="form-group">
                 <input type="text" class="form-control" name="month">月</div>
               <div class="form-group">
                 <input type="text" class="form-control" name="day">日</div>
+
+
+
+
+
+
               <button type="submit" class="btn btn-default">日期查询</button>
             </form>
             <li class="active">
@@ -62,7 +72,7 @@
                   <th>客户名称</th>
                   <th>联系人</th>
                   <th>联系方式</th>
-                  <th>订购产品清单</th>
+                  <th>品名%单价×数量</th>
                   <th>总价</th>
                   <th>结算情况</th>
                 </tr>
@@ -71,6 +81,9 @@
               <%
                 List<Order> currentOrder = (List<Order>) session.getAttribute("nearly15Order");
                 DecimalFormat df = new DecimalFormat("#.00");
+
+                if (currentOrder!=null)
+                {
                 for(int i=0;i<currentOrder.size();++i){
                   Order order = currentOrder.get(i);
               %>
@@ -86,6 +99,7 @@
                 <td><%=order.getStatus()%></td>
               </tr>
               <%
+                  }
                 }
               %>
               </tbody>

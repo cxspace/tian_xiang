@@ -9,6 +9,7 @@ import java.util.List;
 /**
  * Created by hjc on 16-7-3.
  */
+
 public interface IStockChangeDao {
     public boolean add(StockChange stockChange);
     //增加库存变化清单

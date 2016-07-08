@@ -168,12 +168,18 @@ public class Customers {
         List<PersonalUser> personalUserList = personalUserDao.findAll();
         List<CompanyUser> companyUserList = companyUserDao.findAll();
         List<Indent> IndentList = indentDao.findAllIndent();
-
         List<Customer> resultList = new ArrayList<Customer>();
+
+        System.out.println(personalUserList);
+        System.out.println(companyUserList);
+        System.out.println(IndentList);
+
+
 
         for(PersonalUser personalUser : personalUserList){
             int unStatus = 0;
             String nearestTime = null;
+
             for(Indent indent : IndentList){
                 if(indent.getBuyer_id().equals(personalUser.getUser_user_id())){
                     //如果此人有订单
@@ -187,6 +193,7 @@ public class Customers {
                     }
                 }
             }
+
             if(nearestTime.compareTo(someDay)>0){
                 //是在指定时间内的订单
                 Customer customer = new Customer();
@@ -198,6 +205,7 @@ public class Customers {
                 resultList.add(customer);
             }
         }
+
         for(CompanyUser companyUser : companyUserList){
             int unStatus = 0;
             String nearestTime = null;
@@ -225,6 +233,8 @@ public class Customers {
                 resultList.add(customer);
             }
         }
+
+        System.out.println(resultList);
         return resultList;
     }
 

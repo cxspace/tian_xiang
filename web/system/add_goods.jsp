@@ -2,14 +2,11 @@
 <html><head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <script type="text/javascript" src="http://cdnjs.cloudflare.com/ajax/libs/jquery/2.0.3/jquery.min.js"></script>
-    <script type="text/javascript" src="http://netdna.bootstrapcdn.com/bootstrap/3.3.4/js/bootstrap.min.js"></script>
-    <link href="http://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.3.0/css/font-awesome.min.css" rel="stylesheet" type="text/css">
-    <link href="http://pingendo.github.io/pingendo-bootstrap/themes/default/bootstrap.css" rel="stylesheet" type="text/css">
-    <link rel="stylesheet" href="http://apps.bdimg.com/libs/bootstrap/3.3.0/css/bootstrap.min.css">
-    <script src="http://apps.bdimg.com/libs/jquery/2.1.1/jquery.min.js"></script>
-    <script src="http://apps.bdimg.com/libs/bootstrap/3.3.0/js/bootstrap.min.js"></script>
-  </head><body>
+  <script type="text/javascript" src="${pageContext.request.contextPath}/front/js/jquery.min.js"></script>
+  <script type="text/javascript" src="${pageContext.request.contextPath}/front/js/bootstrap.min.js"></script>
+  <link href="http://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.3.0/css/font-awesome.min.css" rel="stylesheet" type="text/css">
+  <link href="${pageContext.request.contextPath}/system/css/bootstrap.min.css" rel="stylesheet" type="text/css">
+</head><body>
     <form class="form-horizontal" role="form" method="post" enctype="multipart/form-data" action="${pageContext.request.contextPath}/AddGoodControl">
       <div class="form-group">
         <label for="firstname" class="col-sm-2 control-label">
@@ -54,17 +51,39 @@
         </div>
       </div>
       <div class="col-sm-1"></div>
+
       <div class="form-group">
-        <label class="sr-only" for="inputfile">食品图片上传</label>
-        <input type="file" id="inputfile" name="picture">
+
+        <label for="inputfile">食物图片上传<font color="#dc143c">（图片的大小小于1M，否则前台卡顿）</font></label>
+
+        <div class="row">
+          <div class="col-md-2"></div>
+          <div class="col-md-4">
+        <input type="file" id="inputfile" name="picture" class="form-inline">
+          </div>
+          <div class="col-md-6"></div>
+          </div>
       </div>
+
       <div class="col-sm-1"></div>
       <div class="col-sm-3">
         <div class="form-group">
           <label for="name">商品描述</label>
           <textarea class="form-control" rows="3" name="goodDescribe"></textarea>
+
+          <br>
+
+          <br>
+
+          <br>
           <div class="section">
+
             <div class="row">
+              <div class="col-md-4">
+
+
+              </div>
+
               <div class="col-md-6">
                   <input class="btn btn-primary" type="submit" value="确定"/>
               </div>

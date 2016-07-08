@@ -186,4 +186,11 @@ public class IndentDao implements IIndentDao {
         String sql = "UPDATE indent SET clearing_status = '"+status+"' WHERE indent_id = '"+indent_id+"';";
         return JdbcUtils.exeSql(sql);
     }
+
+    @Override
+    public boolean changeMethod(String indent_id, String method) {
+        String sql = "UPDATE indent SET clearing_form = '"+method+"'WHERE indent_id= '"+indent_id+"'";
+
+        return JdbcUtils.exeSql(sql);
+    }
 }

@@ -66,15 +66,18 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
                   <li>
                     <a href="${pageContext.request.contextPath}/CustomerControl?day=0" target="frame">当前下单客户</a>
                   </li>
+
+                  <!--
                   <li>
-                    <a href="${pageContext.request.contextPath}/CustomerControl?day=7" target="frame">近7天下单客户</a>
+                    <a href="/CustomerControl?day=7" target="frame">近7天下单客户</a>
                   </li>
                   <li>
-                    <a href="${pageContext.request.contextPath}/CustomerControl?day=15" target="frame">近15天下单客户</a>
+                    <a href="/CustomerControl?day=15" target="frame">近15天下单客户</a>
                   </li>
                   <li>
-                    <a href="${pageContext.request.contextPath}/CustomerControl?day=30" target="frame">近30天下单客户</a>
-                  </li>
+                    <a href="/CustomerControl?day=30" target="frame">近30天下单客户</a>
+                   </li>
+                   -->
                 </ul>
               </li>
               <li>

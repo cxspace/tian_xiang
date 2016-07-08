@@ -25,12 +25,13 @@ public interface IUserDao {
           功能：根据手机号,密码查询用户
 
           返回一个用户对象
+
+          没找到，返回null
      */
 
     public User find(String phone , String password) throws SQLException;
 
-    public User findFromId(String userId) throws SQLException;
     //跟据id查找
-
+    public User findFromId(String userId) throws SQLException;
 
 }

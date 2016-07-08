@@ -46,19 +46,23 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
     <div class="about_top">
       <div class="container">
         <div class="contact-form">
-          <div class="col-md-4 contact-grid">
+          <div class="col-md-4 ">
             <h3>管理员登录</h3>
             <form method="post" action="${pageContext.request.contextPath}/ManagerLogin">
+              <!--解决火狐显示问题-->
+
               <div class="form-group">
                 <label for="name">用户名</label>
-                <input type="text" class="form-control" id="inputName" placeholder="请输入用户名" name="managerName">
+                <input type="text" class="form-control" id="inputName" name="managerName">
               </div>
+
               <div class="form-group">
                 <label for="password">密码</label>
                 <input type="password" class="form-control" id="inputPassword" placeholder="请输入密码" name="managerPassword">
               </div>
               <br>
               <br>
+
               <div class="send">
                 <input type="submit" value="登录">
               </div>

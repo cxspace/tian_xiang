@@ -4,11 +4,11 @@
 <html><head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <script type="text/javascript" src="http://cdnjs.cloudflare.com/ajax/libs/jquery/2.0.3/jquery.min.js"></script>
-    <script type="text/javascript" src="http://netdna.bootstrapcdn.com/bootstrap/3.3.4/js/bootstrap.min.js"></script>
-    <link href="http://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.3.0/css/font-awesome.min.css" rel="stylesheet" type="text/css">
-    <link href="${pageContext.request.contextPath}/system/css/Untitled.css" rel="stylesheet" type="text/css">
-  </head><body>
+  <script type="text/javascript" src="${pageContext.request.contextPath}/front/js/jquery.min.js"></script>
+  <script type="text/javascript" src="${pageContext.request.contextPath}/front/js/bootstrap.min.js"></script>
+  <link href="http://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.3.0/css/font-awesome.min.css" rel="stylesheet" type="text/css">
+  <link href="${pageContext.request.contextPath}/system/css/bootstrap.min.css" rel="stylesheet" type="text/css">
+</head><body>
     <div class="navbar navbar-default navbar-static-top">
       <div class="container">
         <div class="navbar-header">
@@ -53,7 +53,10 @@
 
               <%List<Customer> nearly15Customer = (List<Customer>) session.getAttribute("nearly15Customer");
                 int rank=1;
+                if (nearly15Customer!=null)
+                {
                 for(int i=nearly15Customer.size()-1;i>=0;--i){
+
                 Customer customer = nearly15Customer.get(i);
                 %>
                 <tr>
@@ -68,6 +71,7 @@
                 <%
                 ++rank;
                 }
+                  }
                 %>
 
 

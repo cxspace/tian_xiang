@@ -29,4 +29,6 @@ public interface ICommodityDao {
 
     public Commodity findFromC_name(String c_name) throws SQLException;
     //通过商品名查找商品
+
+    public boolean updateComodityNumber(int crruentNumber);
 }

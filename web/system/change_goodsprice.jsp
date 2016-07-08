@@ -5,10 +5,10 @@
 <html><head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <script type="text/javascript" src="http://cdnjs.cloudflare.com/ajax/libs/jquery/2.0.3/jquery.min.js"></script>
-    <script type="text/javascript" src="http://netdna.bootstrapcdn.com/bootstrap/3.3.4/js/bootstrap.min.js"></script>
-    <link href="http://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.3.0/css/font-awesome.min.css" rel="stylesheet" type="text/css">
-    <link href="http://pingendo.github.io/pingendo-bootstrap/themes/default/bootstrap.css" rel="stylesheet" type="text/css">
+  <script type="text/javascript" src="${pageContext.request.contextPath}/front/js/jquery.min.js"></script>
+  <script type="text/javascript" src="${pageContext.request.contextPath}/front/js/bootstrap.min.js"></script>
+  <link href="http://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.3.0/css/font-awesome.min.css" rel="stylesheet" type="text/css">
+  <link href="${pageContext.request.contextPath}/system/css/bootstrap.min.css" rel="stylesheet" type="text/css">
   </head><body>
     <div class="section">
       <div class="container">
@@ -41,9 +41,13 @@
                   <td>
                     <form class="form-horizontal" role="form" method="post" action="${pageContext.request.contextPath}/GoodChangePrice2?goodId=<%=good.getGoodId()%>">
                       <div class="col-md-12 text-center">
-                        <div class="col-md-2 text-center">
+                        <div class="col-md-4" aria-valuetext="">
+
+                        </div>
+                        <div class="col-md-6 text-center">
                           <input type="text" class="form-control" name="goodPrice">
                         </div>
+
                         <div class="col-md-2 text-left">
                           <button type="submit" class="btn btn-info btn-ls">改变</button>
                         </div>

@@ -21,9 +21,13 @@ import java.util.List;
 public class CustomerControl extends HttpServlet {
     protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
         request.setCharacterEncoding("utf8");
+
+        System.out.println(request.getParameter("day"));
         String dayString = request.getParameter("day");
         int day = Integer.parseInt(dayString);
         //初始化request数据
+
+
 
         Customers customers = new Customers();
         //service
@@ -32,6 +36,8 @@ public class CustomerControl extends HttpServlet {
         if(day==-1){
             //所有客户
             List<Customer> allCustomer = new ArrayList<Customer>();
+
+
             try {
                 allCustomer = customers.findAll();
             } catch (SQLException e) {
@@ -55,15 +61,19 @@ public class CustomerControl extends HttpServlet {
             List<Customer> nearlyCustomer = new ArrayList<Customer>();
             String key = "nearly"+day+"Customer";
             //session中输入的键值
-
+            System.out.println(key);
             try {
                 nearlyCustomer = customers.findNearlyCustomer(day);
             } catch (SQLException e) {
                 e.printStackTrace();
             }
 
+
+
+
             session.setAttribute(key,nearlyCustomer);
 
+            System.out.println(session.getAttribute("nearly7Customer"));
 
             switch (day){
                 case 7:
