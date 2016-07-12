@@ -175,7 +175,7 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
                                     <div class="col-sm-4">
                                         <p>日</p>
                                         <select class="form-control" name=DD >
-                                            <option value=""></option>
+                                            <option>1</option>
                                         </select>
                                     </div>
                                 </div>

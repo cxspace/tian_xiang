@@ -23,6 +23,7 @@ public class CustomerFindFromName extends HttpServlet {
         request.setCharacterEncoding("utf8");
         String name = request.getParameter("name");
 
+
         Customers customers = new Customers();
         //service
         List<Customer> customerList = new ArrayList<Customer>();

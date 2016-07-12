@@ -80,20 +80,55 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
     <div class="section">
       <div class="container">
         <div class="row">
-          <div class="col-md-3 text-center">&nbsp;</div>
-          <div class="col-md-2 text-center">
-            <h2>产品介绍</h2>
-          </div>
-          <div class="col-md-3 text-center">&nbsp;</div>
-          <div class="col-md-1 text-center">&nbsp;</div>
-          <div class="col-md-2 text-center">
-            <h2>产品分类</h2>
-          </div>
-          <br>
-          <div class="col-md-1 text-center">&nbsp;</div>
+            <div class="col-md-4 text-center">
+                <h2>产品分类</h2>
+                <ul class="list-group">
+
+                    <% List<CommodityClass> allClasses = CommodityClassService.findAllCommodityClass(); %>
+
+                    <%
+                        for (int i = 0 ; i < allClasses.size() ; i++){
+                    %>
+
+                    <li class="list-group-item list-group-item-info">
+
+                        <form method="post" action="">
+                            <a class="btn-default" href="${pageContext.request.contextPath}/SelectClass?classId=<%=allClasses.get(i).getCc_id()%>">
+                                <h3>
+                                    <%=allClasses.get(i).getCc_name()%>
+                                </h3>
+                            </a>
+                        </form>
+                    </li>&nbsp;
+                    <%
+                        }
+                    %>
+                    <!--
+                    <li class="list-group-item list-group-item-info">
+                      <a href="#"><h3>猪类</h3></a>
+                    </li>&nbsp;
+                    <li class="list-group-item list-group-item-info">
+                      <a href="#"><h3>狗类</h3></a>
+                    </li>&nbsp;
+                    <li class="list-group-item list-group-item-info">
+                      <a href="#"><h3>鱼类</h3></a>
+                    </li>&nbsp;
+                    <li class="list-group-item list-group-item-info">
+                      <a href="#"></a>
+                      <h3>
+                        <a href="#">鸭类</a>
+                      </h3>
+                    </li>
+                  -->
+
+                </ul>
+            </div>
+
 
           <div class="col-md-8 text-center">
-            <%
+              <h2>产品展示</h2>
+
+              <%
               //如果request中存的所有商品集合不为空
                 if (request.getAttribute("allCommodities")!=null)
                  {
@@ -153,7 +188,7 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
               }else {
             %>
 
-            <h1>亲！请点击右侧某个类别查看商品</h1>
+            <h1>亲！请点击上面某个类别查看商品</h1>
             <%
               }
             %>
@@ -162,57 +197,19 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
 
 
 
-          <div class="col-md-4 text-center">
-            <ul class="list-group">
-
-              <% List<CommodityClass> allClasses = CommodityClassService.findAllCommodityClass(); %>
-
-              <%
-                for (int i = 0 ; i < allClasses.size() ; i++){
-              %>
-
-                <li class="list-group-item list-group-item-info">
-
-                <form method="post" action="">
-                <a class="btn-default" href="${pageContext.request.contextPath}/SelectClass?classId=<%=allClasses.get(i).getCc_id()%>">
-                  <h3>
-                    <%=allClasses.get(i).getCc_name()%>
-                  </h3>
-                </a>
-                </form>
-                </li>&nbsp;
-              <%
-                }
-              %>
-              <!--
-              <li class="list-group-item list-group-item-info">
-                <a href="#"><h3>猪类</h3></a>
-              </li>&nbsp;
-              <li class="list-group-item list-group-item-info">
-                <a href="#"><h3>狗类</h3></a>
-              </li>&nbsp;
-              <li class="list-group-item list-group-item-info">
-                <a href="#"><h3>鱼类</h3></a>
-              </li>&nbsp;
-              <li class="list-group-item list-group-item-info">
-                <a href="#"></a>
-                <h3>
-                  <a href="#">鸭类</a>
-                </h3>
-              </li>
-            -->
-
-            </ul>
           </div>
 
-          </div>
       </div>
+
+
+
     </div>
 
 
     <br>
     <br>
     <br>
+
     <!--//banner-->
 
    <div class="footer">

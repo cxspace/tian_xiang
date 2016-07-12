@@ -31,10 +31,25 @@ public class Orders {
 
         Order order = new Order();
 
-        String status = indent.getClearing_status()==0?"未结清":indent.getClearing_status()==1?"已结清":"未提交";
+        String status = "";
+
+        if (indent.getClearing_status()==0){
+
+             status = "未确认付款";
+
+        }else if (indent.getClearing_status()==1)
+        {
+            status ="已结清";
+
+        }else if (indent.getClearing_status()==2)
+        {
+            status="未提交";
+        }
+
         double totalPrice = indent.getTotal_price();
         String ordered = indent.getGoods();
         String orderDate = TransTimestamp.timestampToSecString(indent.getOrder_time());
+        String orderId = indent.getIndent_id();
 
         String buyerId = indent.getBuyer_id();
         //通过购买者的id查找顾客名称，联系人，联系方式
@@ -57,6 +72,7 @@ public class Orders {
             customerName = companyUser.getCompany_name();
         }
 
+        order.setOrderId(orderId);
         order.setStatus(status);
         order.setTotalPrice(totalPrice);
         order.setPhone(phone);
@@ -64,6 +80,7 @@ public class Orders {
         order.setCustomerName(customerName);
         order.setOrdered(ordered);
         order.setOrderDate(orderDate);
+
 
         return order;
     }

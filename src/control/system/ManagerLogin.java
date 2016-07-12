@@ -30,14 +30,14 @@ public class ManagerLogin extends HttpServlet {
         String tip = null;
         if(findedManager == null){
             tip = "用户名错误";
-            rd = request.getRequestDispatcher("/system/login_fail.jsp");
+            rd = request.getRequestDispatcher("/system/error.jsp");
         }else if(!findedManager.getManager_password().equals(managerPassword)){
             tip = "密码错误";
-            rd = request.getRequestDispatcher("/system/login_fail.jsp");
+            rd = request.getRequestDispatcher("/system/error.jsp");
         }else{
             HttpSession session = request.getSession();
             session.setAttribute("managerId",findedManager.getManager_id());
-            rd = request.getRequestDispatcher("/system/manager_system.jsp");
+            rd = request.getRequestDispatcher("/system/index.jsp");
         }
         if(tip!=null){
             HttpSession session = request.getSession();

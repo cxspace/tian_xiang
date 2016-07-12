@@ -12,6 +12,16 @@ public class OrderTableBean {
     private double totalPrice;
     private String desc;
 
+    private String orderId;
+
+    public String getOrderId() {
+        return orderId;
+    }
+
+    public void setOrderId(String orderId) {
+        this.orderId = orderId;
+    }
+
     public String getPicture() {
         return picture;
     }

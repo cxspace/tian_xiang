@@ -23,9 +23,9 @@ public class OrderFindFromYMD extends HttpServlet {
     protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
         request.setCharacterEncoding("utf8");
         HttpSession session = request.getSession();
-        String dayString = request.getParameter("day");
-        String monthString = request.getParameter("month");
-        String yearString = request.getParameter("year");
+        String dayString = request.getParameter("DD");
+        String monthString = request.getParameter("MM");
+        String yearString = request.getParameter("YYYY");
         int day = Integer.parseInt(dayString);
         int month = Integer.parseInt(monthString);
         int year = Integer.parseInt(yearString);

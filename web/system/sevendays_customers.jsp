@@ -42,7 +42,7 @@
             <table class="table">
               <thead>
                 <tr>
-                  <th>客户序号</th>
+                  <th>序号</th>
                   <th>客户名称</th>
                   <th>联系人</th>
                   <th>联系方式</th>

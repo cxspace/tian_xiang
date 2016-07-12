@@ -112,7 +112,7 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
         %>
 
 
-        <table class="table table-striped">
+        <table class="table table-bordered table-striped">
 
 
           <thead>
@@ -122,8 +122,7 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
               <th>品名</th>
               <th>商品id%批发价*订购数量</th>
               <th>总价</th>
-              <th>删除</th>
-              <th>订单状态</th>
+              <th colspan="2">订单状态</th>
           </tr>
           </thead>
           <tbody>

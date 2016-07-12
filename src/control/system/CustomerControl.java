@@ -37,7 +37,6 @@ public class CustomerControl extends HttpServlet {
             //所有客户
             List<Customer> allCustomer = new ArrayList<Customer>();
 
-
             try {
                 allCustomer = customers.findAll();
             } catch (SQLException e) {

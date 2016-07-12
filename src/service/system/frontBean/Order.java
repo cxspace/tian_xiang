@@ -19,6 +19,16 @@ public class Order {
     private String status;
     //结算情况
 
+    private String orderId;
+
+    public String getOrderId() {
+        return orderId;
+    }
+
+    public void setOrderId(String orderId) {
+        this.orderId = orderId;
+    }
+
     public String getOrderDate() {
         return orderDate;
     }

@@ -267,4 +267,14 @@
         <url-pattern>/fileServlet</url-pattern>
     </servlet-mapping>
 
+    <servlet>
+        <servlet-name>ChangeOrderStatus</servlet-name>
+        <servlet-class>control.system.ChangeOrderStatus</servlet-class>
+    </servlet>
+    
+    <servlet-mapping>
+        <servlet-name>ChangeOrderStatus</servlet-name>
+        <url-pattern>/ChangeOrderStatus</url-pattern>
+    </servlet-mapping>
+    
 </web-app>

@@ -28,7 +28,6 @@ public class AddGoodControl extends HttpServlet {
         List<String> params = FileUpUtils.fileUpload(request,id);
 
 
-
         String goodName = params.get(0);
         String goodClassName = params.get(1);
         String goodNumberString = params.get(2);
@@ -51,6 +50,7 @@ public class AddGoodControl extends HttpServlet {
         try {
             addGoods.upDate(good);
         } catch (SQLException e) {
+            request.getRequestDispatcher("/system/error.jsp").forward(request,response);
             e.printStackTrace();
         }
         request.getRequestDispatcher("/system/add_goods.jsp").forward(request,response);
